@@ -1,0 +1,35 @@
+﻿
+@{
+	ViewBag.Title = "Form";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+
+	var listaBanco = ViewBag.ListaBanco;
+}
+
+<h2>Nueva Sucursal</h2>
+@Html.ActionLink("Cancelar", "Index")
+<form action="" method="post" enctype="multipart/form-data">
+
+	<div>
+		<label>Nombre</label>
+		<input type="text" name="Nombre" id="Nombre" />
+	</div>
+
+	<div>
+		<label>Direccion</label>
+		<input type="text" name="Direccion" />
+	</div>
+
+	<div>
+		<label>Banco</label>
+		<select name="IdBanco">
+			<option value="0">Seleccione</option>
+
+			@foreach (var item in listaBanco) {
+				<option value="@item.Id">@item.Nombre</option>
+			}
+		</select>
+	</div>
+
+	<button type="submit">Enviar</button>
+</form>

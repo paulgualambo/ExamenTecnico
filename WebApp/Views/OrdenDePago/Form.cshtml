@@ -1,0 +1,56 @@
+﻿@{
+	ViewBag.Title = "Form";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+
+	var listaSucursal = ViewBag.ListaSucursal;
+	var listaMoneda = ViewBag.ListaMoneda;
+	var listaEstado = ViewBag.ListaEstado;
+}
+
+<h2>Nueva Orden de pago</h2>
+@Html.ActionLink("Cancelar", "Index")
+<form action="" method="post" enctype="multipart/form-data">
+
+	<div>
+		<label>Monto</label>
+		<input type="text" name="Monto" id="Monto" />
+	</div>
+
+	<div>
+		<label>Moneda</label>
+		<select name="Moneda">
+			<option value="0">Seleccione</option>
+
+			@foreach (var item in listaMoneda)
+			{
+				<option value="@item.Key">@item.Value</option>
+			}
+		</select>
+	</div>
+
+	<div>
+		<label>Estado</label>
+		<select name="Estado">
+			<option value="0">Seleccione</option>
+
+			@foreach (var item in listaEstado)
+			{
+				<option value="@item.Key">@item.Value</option>
+			}
+		</select>
+	</div>
+
+	<div>
+		<label>Sucursal</label>
+		<select name="IdSucursal">
+			<option value="0">Seleccione</option>
+
+			@foreach (var item in listaSucursal)
+			{
+				<option value="@item.Id">@item.Nombre</option>
+			}
+		</select>
+	</div>
+
+	<button type="submit">Enviar</button>
+</form>

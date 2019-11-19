@@ -1,0 +1,30 @@
+﻿
+@{
+	ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+
+	var lista = ViewBag.Lista;
+}
+
+<h2>Sucursales</h2>
+
+@Html.ActionLink("Nuevo", "Form")
+<table>
+	<tr>
+		<th>Id</th>
+		<th>Nombre</th>
+		<th>Direccion</th>
+		<th>Banco</th>
+		<th>Fecha de registro</th>
+	</tr>
+	@foreach (var item in lista)
+	{
+		<tr>
+			<td>@item.Id</td>
+			<td>@item.Nombre</td>
+			<td>@item.Direccion</td>
+			<td>@item.Banco.Nombre</td>
+			<td>@item.FechaDeRegistro</td>
+		</tr>
+	}
+</table>
