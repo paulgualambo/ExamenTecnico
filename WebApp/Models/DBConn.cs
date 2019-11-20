@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Web;
 
 namespace WebApp.Models
 {
@@ -19,7 +20,13 @@ namespace WebApp.Models
 			// the name of the database 
 			// The UserID and Password are the credentials 
 			// required to connect to the database. 
-			constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\pgualambo\Source\Repos\ExamenTecnico\WebApp\App_Data\Prototipo.mdf;Integrated Security=True";
+			string startupPath = System.IO.Directory.GetCurrentDirectory();
+			//Microsoft.SqlServer.Server("~/App_Data/Prototipo.mdf");
+
+			string path = System.Web.HttpContext.Current.Server.MapPath("~/App_Data/Prototipo.mdf");
+
+			//constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\pgualambo\Source\Repos\ExamenTecnico\WebApp\App_Data\Prototipo.mdf;Integrated Security=True";
+			constr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="+path+";Integrated Security=True";
 			conn = new SqlConnection(constr);
 
 			return true;

@@ -17,14 +17,24 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Examen Técnico", "Index", "Banco", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Examen Técnico", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Bancos", "Index", "Banco")</li>
-                    <li>@Html.ActionLink("Sucursales", "Index", "Sucursal")</li>
-                    <li>@Html.ActionLink("Orden de pago", "Index", "OrdenDePago")</li>
-                </ul>
+				<ul class="nav navbar-nav">
+					<li>@Html.ActionLink("Bancos", "Index", "Banco")</li>
+					<li>@Html.ActionLink("Sucursales", "Index", "Sucursal")</li>
+					<li>@Html.ActionLink("Orden de pago", "Index", "OrdenDePago")</li>
+					<li>
+						<a href="@Url.Content("~/Services/OrdenDePago.asmx")" target="_blank">
+							Servicio Api (PEN / USD)
+						</a>
+					</li>
+					<li>
+						<a href="@Url.Content("~/Services/Sucursal.asmx")" target="_blank">
+							Servicio Web
+						</a>
+					</li>
+				</ul>
             </div>
         </div>
     </div>

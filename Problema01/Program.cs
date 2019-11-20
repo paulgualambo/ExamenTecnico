@@ -13,8 +13,19 @@ namespace Problema01
 			ChangeString cs = new ChangeString();
 
 			//cs.build("123 abcd**12");
-			Console.Write(cs.build("123 abcd*3") == "123 bcde*3");
-			Console.Write(cs.build("**Casa 52") == "**Dbtb 52");
+			//Console.Write(cs.build("123 abcd*3") == "123 bcde*3");
+			//Console.Write(cs.build("**Casa 52") == "**Dbtb 52");
+
+			while (true)
+			{
+				Console.WriteLine("\n\n---Ingrese una cadena---");
+				string cadena = "";
+				cadena = Console.ReadLine();
+				Console.WriteLine(cs.build(cadena));
+
+			}
+
+
 		}
 	}
 }

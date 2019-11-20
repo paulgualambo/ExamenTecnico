@@ -64,10 +64,11 @@ namespace WebApp.Tests.Controllers
 			//// Act
 			//ViewResult result = controller.Index() as ViewResult;
 
-			BancoController controller = new BancoController();
-			ViewResult result = controller.Form(new Models.Banco() {
-				Nombre = "Banco "+ (new Random().Next()).ToString(),
-				Direccion = "Direccion " + (new Random().Next()).ToString()
+			SucursalController controller = new SucursalController();
+			ViewResult result = controller.Form(new Models.Sucursal() {
+				Nombre = "Sucursal "+ (new Random().Next()).ToString(),
+				Direccion = "Direccion " + (new Random().Next()).ToString(),
+				IdBanco = 2
 			}) as ViewResult;
 
 			// Assert

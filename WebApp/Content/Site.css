@@ -22,3 +22,11 @@ select,
 textarea {
     max-width: 280px;
 }
+
+table {
+	width: 90%
+}
+
+table tr{
+	margin:20px;
+}
